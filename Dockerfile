@@ -4,7 +4,7 @@ RUN echo 'keyboard-configuration keyboard-configuration/layoutcode select us' | 
 RUN apt-get update -y && apt-get upgrade -y
 RUN install_packages xvfb gdebi util-linux iproute2 net-tools curl wget nano gnupg htop util-linux uuid-runtime
 
-RUN wget -O /tmp/peer2profit.deb https://updates.peer2profit.app/peer2profit_0.48_amd64.deb && \
+RUN wget --no-check-certificate -O /tmp/peer2profit.deb https://updates.peer2profit.app/peer2profit_0.48_amd64.deb && \
     gdebi --n /tmp/peer2profit.deb && \
     rm /tmp/peer2profit.deb
 
