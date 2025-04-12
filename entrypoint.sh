@@ -1,3 +1,8 @@
+#!/bin/bash
+
+echo " "
+echo "Starting container initialization..."
+
 if [ -z "$P2P_EMAIL" ]; then
   echo " "
   echo "P2P_EMAIL is not set or is blank. Skipping creation of the Peer2Profit configuration file."
