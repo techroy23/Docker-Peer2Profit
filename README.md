@@ -14,7 +14,7 @@ This repository provides a Dockerized solution for running Peer2Profit, allowing
 ## Run
 ```
 
-docker run -d --name docker-slimvnc \
+docker run -d --name docker-peer2profit \
   -e VNC_PASS="your_secure_password" \
   -e P2P_EMAIL="YourEmail@here.com" \
   -p 5901:5901 -p 6080:6080 \
