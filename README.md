@@ -26,3 +26,11 @@ docker run -d --name docker-peer2profit \
 ## Access
 - VNC Client: localhost:5901
 - Web Interface (noVNC): http://localhost:6080
+
+## Promo
+<ul><li><a href="https://t.me/peer2profit_app_bot?start=1628962882611800423c343"> [ REGISTER HERE ] </a></li></ul>
+<div align="center">
+  <a href="https://t.me/peer2profit_app_bot?start=1628962882611800423c343">
+      <img src="screenshot/p2p-banner-960x640.png" alt="Alt text">
+  </a>
+</div>
