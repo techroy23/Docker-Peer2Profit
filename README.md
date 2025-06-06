@@ -24,8 +24,8 @@ docker run -d --name docker-peer2profit \
 ```
 
 ## Access
-- VNC Client: localhost:5901
-- Web Interface (noVNC): http://localhost:6080
+- VNC Client: localhost:5555
+- Web Interface (noVNC): http://localhost:6666
 
 ## Promo
 <ul><li><a href="https://t.me/peer2profit_app_bot?start=1628962882611800423c343"> [ REGISTER HERE ] </a></li></ul>
