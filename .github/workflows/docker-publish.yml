@@ -21,15 +21,13 @@ jobs:
       - name: Log in to GHCR
         run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      - name: Notify on Telegram
+      - name: Notify Start on Telegram
         run: |
           TIMESTAMP=$(TZ=Asia/Manila date +"%Y-%m-%d %H:%M:%S %Z %z")
-          
-          MESSAGE="🚀 GitHub Action triggered%0A"
+          MESSAGE="🛠️ Build Started %0A"
           MESSAGE+="📦 Repository: ${{ github.repository }}%0A"
           MESSAGE+="🌱 Branch: ${{ github.ref }}%0A"
           MESSAGE+="🕒 Triggered at: ${TIMESTAMP}"
-          
           curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
             -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" \
             -d "text=${MESSAGE}"
@@ -38,3 +36,27 @@ jobs:
         run: |
           docker buildx build --platform linux/amd64 \
           -t ghcr.io/${{ github.actor }}/docker-peer2profit:latest --push .
+
+      - name: Notify Success on Telegram
+        if: success()
+        run: |
+          TIMESTAMP=$(TZ=Asia/Manila date +"%Y-%m-%d %H:%M:%S %Z %z")
+          MESSAGE="✅ Build Done %0A"
+          MESSAGE+="📦 Repository: ${{ github.repository }}%0A"
+          MESSAGE+="🌱 Branch: ${{ github.ref }}%0A"
+          MESSAGE+="🕒 Completed at: ${TIMESTAMP}"
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d "text=${MESSAGE}"
+
+      - name: Notify Failure on Telegram
+        if: failure()
+        run: |
+          TIMESTAMP=$(TZ=Asia/Manila date +"%Y-%m-%d %H:%M:%S %Z %z")
+          MESSAGE="❌ Build Error %0A"
+          MESSAGE+="📦 Repository: ${{ github.repository }}%0A"
+          MESSAGE+="🌱 Branch: ${{ github.ref }}%0A"
+          MESSAGE+="🕒 Failed at: ${TIMESTAMP}"
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d "text=${MESSAGE}"
