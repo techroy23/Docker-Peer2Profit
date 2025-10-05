@@ -13,13 +13,8 @@ VNC_DISPLAY=":0"
 VNC_PORT=${VNC_PORT:-5901}
 NOVNC_PORT=${NOVNC_PORT:-6080}
 
-if [ -z "${WIPTER_EMAIL:-}" ]; then
-    echo " >>> An2Kin >>> [ERR] WIPTER_EMAIL is not set."
-    exit 1
-fi
-
-if [ -z "${WIPTER_PASSWORD:-}" ]; then
-    echo " >>> An2Kin >>> [ERR] WIPTER_PASSWORD is not set."
+if [ -z "${P2P_EMAIL:-}" ]; then
+    echo " >>> An2Kin >>> [ERR] P2P_EMAIL is not set."
     exit 1
 fi
 
