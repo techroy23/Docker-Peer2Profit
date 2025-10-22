@@ -1,8 +1,13 @@
-# Docker-Peer2Profit
+## Docker-Peer2Profit
 
 ## Overview
 This repository provides a containerized environment for running the **Peer2Profit application** inside a lightweight Debian‑based image.  
 The setup includes, headless X11 stack with **Xvfb**, **Openbox**, **x11vnc**, and **noVNC**, allowing remote access through both VNC and a browser.  
+
+## Links
+| DockerHub | GitHub | Invite |
+|----------|----------|----------|
+| [![Docker Hub](https://img.shields.io/badge/ㅤ-View%20on%20Docker%20Hub-blue?logo=docker&style=for-the-badge)](https://hub.docker.com/r/techroy23/docker-peer2profit) | [![GitHub Repo](https://img.shields.io/badge/ㅤ-View%20on%20GitHub-black?logo=github&style=for-the-badge)](https://github.com/techroy23/Docker-Peer2Profit) | [![Invite Link](https://img.shields.io/badge/ㅤ-Join%20Peer2Profit%20Now-brightgreen?logo=linktree&style=for-the-badge)](https://t.me/peer2profit_app_bot?start=1628962882611800423c343) |
 
 The container also integrates:
 - Automated **DBus** system/session bus initialization
