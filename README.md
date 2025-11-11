@@ -2,7 +2,7 @@
 
 ## Overview
 This repository provides a containerized environment for running the **Peer2Profit application** inside a lightweight Debian‑based image.  
-The setup includes, headless X11 stack with **Xvfb**, **Openbox**, **x11vnc**, and **noVNC**, allowing remote access through both VNC and a browser.  
+The setup includes, headless X11 stack with **Xvfb**, **Openbox**, **x11vnc**, and **noVNC**.
 
 ## Links
 | DockerHub | GitHub | Invite |
@@ -21,8 +21,7 @@ The container also integrates:
   - `Xvfb` virtual framebuffer for X11 rendering  
   - `openbox` as a minimal window manager  
   - `x11vnc` for VNC access  
-  - `noVNC` + `websockify` for browser‑based access
-
+  
 - **Custom System Identity Simulation**  
   - `custom.sh` dynamically generates randomized host metadata (hostname, machine ID, vendor/model, firmware version/date)  
   - Overrides `lsb_release` and `hostnamectl` outputs for consistency
@@ -47,9 +46,6 @@ docker run -d \
   --shm-size=2gb \
   --privileged \
   -e P2P_EMAIL="YourEmail@here.com" \
-  -e VNC_PORT=5900 \
-  -e NOVNC_PORT=6080 \
-  -p 5900:5900 -p 6080:6080 \
   techroy23/docker-peer2profit:latest
 ```
 
